@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { TextField, Button, Paper } from '@mui/material';
 
-function Form({ todoHandler }) {
+function Form({ addTodo }) {
 
   const [text, setText] = useState(null);
   const [id, setId] = useState(0);
@@ -9,7 +9,7 @@ function Form({ todoHandler }) {
   const todoCreate = (text) => {
     const todoObj = {text: text, id: id};
     setId(id + 1);
-    todoHandler(todoObj) 
+    addTodo(todoObj) 
   }
 
   return (
