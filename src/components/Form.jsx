@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { TextField, Button, Paper } from '@mui/material';
+import AddIcon from '@mui/icons-material/Add';
 
 function Form({ addTodo }) {
 
@@ -10,6 +11,7 @@ function Form({ addTodo }) {
     const todoObj = {text: text, id: id};
     setId(id + 1);
     addTodo(todoObj) 
+    document.getElementById("outlined-basic").value = null;
   }
 
   return (
@@ -22,7 +24,7 @@ function Form({ addTodo }) {
         fullWidth
         onChange={(e) => setText(e.target.value)} 
         />
-        <Button variant="text" onClick={() => todoCreate(text)}>ADD +</Button>
+        <Button variant="text" onClick={() => todoCreate(text)}><AddIcon/></Button>
       </div>
     </Paper>
   );
